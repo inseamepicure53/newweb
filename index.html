@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kamoer 卡默尔 | 世界级可靠微型泵领军企业</title>
+<meta name="description" content="Kamoer 卡默尔专注微型泵、精密流体控制与可靠流体传输解决方案，服务生命科学、医疗设备、智慧生活与工业自动化等多元场景。" />
+<style>
+  /* =========================================================
+     Kamoer 官网首页 - 全局变量与基础样式
+     ========================================================= */
+  :root{
+    --kamoer-blue:#0075B6;
+    --kamoer-blue-deep:#005C92;
+    --kamoer-blue-dark:#0A1B3D;
+    --kamoer-blue-soft:#E8F2FA;
+    --kamoer-green:#7AB648;
+    --kamoer-green-soft:#A8CC6E;
+    --text-dark:#1a1a1a;
+    --text-body:#333333;
+    --text-muted:#666666;
+    --text-soft:#8a8a8a;
+    --line:#e6e8eb;
+    --bg-soft:#F7F9FB;
+    --shadow-sm:0 2px 8px rgba(0,0,0,.04);
+    --shadow-md:0 6px 20px rgba(0,30,70,.08);
+    --shadow-lg:0 14px 38px rgba(0,30,70,.12);
+    --container:1200px;
+    --easing:cubic-bezier(.25,.46,.45,.94);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC","Helvetica Neue",Arial,sans-serif;
+    color:var(--text-body);
+    background:#fff;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+
+  .container{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* =========================================================
+     1. 顶部导航栏
+     ========================================================= */
+  .navbar{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    z-index:1000;
+    transition:box-shadow .3s var(--easing);
+  }
+  .navbar.scrolled{box-shadow:0 2px 10px rgba(0,0,0,.06);}
+  .nav-inner{
+    max-width:var(--container);
+    margin:0 auto;
+    height:100%;
+    padding:0 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+    font-size:22px;
+    letter-spacing:.5px;
+    color:var(--kamoer-blue);
+  }
+  .logo-mark{
+    width:32px;height:32px;
+    border-radius:6px;
+    background:linear-gradient(135deg,var(--kamoer-blue) 0%,var(--kamoer-blue-deep) 100%);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:700;font-size:16px;
+    font-family:Arial,sans-serif;
+  }
+  .logo-text{font-family:Arial,Helvetica,sans-serif;}
+  .logo-sub{font-size:12px;color:var(--text-muted);font-weight:400;margin-left:2px;}
+
+  .nav-menu{
+    display:flex;
+    align-items:center;
+    gap:34px;
+    list-style:none;
+    margin:0;padding:0;
+  }
+  .nav-menu a{
+    font-size:14px;
+    color:#333;
+    position:relative;
+    padding:6px 0;
+    transition:color .25s var(--easing);
+  }
+  .nav-menu a:hover{color:var(--kamoer-blue);}
+  .nav-menu li.active a{color:var(--kamoer-blue);font-weight:600;}
+  .nav-menu li.active a::after{
+    content:"";
+    position:absolute;
+    left:50%;bottom:-4px;
+    transform:translateX(-50%);
+    width:18px;height:2px;
+    background:var(--kamoer-blue);
+    border-radius:2px;
+  }
+
+  .nav-icons{
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .nav-icons .icon-btn{
+    width:32px;height:32px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--text-muted);
+    border-radius:50%;
+    transition:all .25s var(--easing);
+  }
+  .nav-icons .icon-btn:hover{color:var(--kamoer-blue);background:var(--kamoer-blue-soft);}
+  .lang-switch{
+    font-size:13px;
+    color:var(--text-muted);
+    padding-left:14px;
+    border-left:1px solid var(--line);
+  }
+  .lang-switch .active-lang{color:var(--kamoer-blue);font-weight:600;}
+
+  .menu-toggle{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    width:28px;height:28px;
+    align-items:center;justify-content:center;
+  }
+  .menu-toggle span{
+    display:block;width:22px;height:2px;background:#333;border-radius:2px;
+    transition:all .3s var(--easing);
+  }
+
+  /* =========================================================
+     2. Hero Banner
+     ========================================================= */
+  .hero{
+    position:relative;
+    margin-top:60px;
+    height:480px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 70% 50%, rgba(0,117,182,.45) 0%, transparent 55%),
+      radial-gradient(ellipse at 30% 80%, rgba(0,40,90,.6) 0%, transparent 60%),
+      linear-gradient(135deg,#04142e 0%,#071c43 45%,#0a2554 100%);
+    color:#fff;
+  }
+  .hero::before{
+    /* 模拟地球夜景的光点星河 */
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      radial-gradient(2px 2px at 12% 22%, rgba(120,200,255,.9), transparent 60%),
+      radial-gradient(1.5px 1.5px at 28% 68%, rgba(180,220,255,.7), transparent 60%),
+      radial-gradient(1px 1px at 45% 35%, rgba(160,200,255,.8), transparent 60%),
+      radial-gradient(2.5px 2.5px at 62% 18%, rgba(120,200,255,.9), transparent 60%),
+      radial-gradient(1px 1px at 78% 55%, rgba(200,225,255,.7), transparent 60%),
+      radial-gradient(1.5px 1.5px at 88% 30%, rgba(140,210,255,.85), transparent 60%),
+      radial-gradient(1px 1px at 18% 88%, rgba(180,220,255,.6), transparent 60%),
+      radial-gradient(2px 2px at 55% 78%, rgba(140,200,255,.8), transparent 60%);
+    opacity:.95;
+  }
+  .hero::after{
+    /* 模拟地球弧光 */
+    content:"";
+    position:absolute;
+    right:-220px;top:50%;
+    width:780px;height:780px;
+    transform:translateY(-50%);
+    border-radius:50%;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(0,180,255,.35), transparent 55%),
+      radial-gradient(circle at 50% 50%, rgba(0,80,160,.5), rgba(2,12,30,.9) 70%);
+    box-shadow:
+      0 0 120px rgba(0,140,255,.25) inset,
+      0 0 80px rgba(0,140,255,.18);
+    opacity:.85;
+  }
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(120,180,255,.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(120,180,255,.06) 1px,transparent 1px);
+    background-size:60px 60px;
+    mask-image:radial-gradient(ellipse at 60% 50%, #000 30%, transparent 70%);
+    -webkit-mask-image:radial-gradient(ellipse at 60% 50%, #000 30%, transparent 70%);
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    max-width:var(--container);
+    margin:0 auto;
+    height:100%;
+    padding:0 24px;
+    display:flex;
+    align-items:center;
+  }
+  .hero-content{
+    max-width:620px;
+    opacity:0;transform:translateY(20px);
+    animation:fadeUp .9s var(--easing) .15s forwards;
+  }
+  .hero-eyebrow{
+    display:inline-block;
+    padding:5px 14px;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:999px;
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:22px;
+    color:#cfe6ff;
+  }
+  .hero h1{
+    font-size:46px;
+    line-height:1.2;
+    margin:0 0 20px;
+    font-weight:700;
+    letter-spacing:1px;
+  }
+  .hero h1 .accent{color:#62c2ff;}
+  .hero p.lead{
+    font-size:15px;
+    line-height:1.85;
+    color:rgba(255,255,255,.82);
+    margin:0 0 32px;
+    max-width:560px;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 26px;
+    font-size:14px;
+    border-radius:3px;
+    transition:all .3s var(--easing);
+    font-weight:500;
+    letter-spacing:.5px;
+  }
+  .btn .arr{transition:transform .3s var(--easing);}
+  .btn:hover .arr{transform:translateX(4px);}
+  .btn-primary{background:var(--kamoer-blue);color:#fff;}
+  .btn-primary:hover{background:var(--kamoer-blue-deep);}
+  .btn-ghost{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.5);
+    color:#fff;
+    backdrop-filter:blur(4px);
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,.18);border-color:#fff;}
+
+  @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+
+  /* =========================================================
+     3. 数据统计区
+     ========================================================= */
+  .stats{
+    background:#fff;
+    padding:50px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    text-align:center;
+  }
+  .stat-item{
+    padding:8px 12px;
+    position:relative;
+  }
+  .stat-item:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    right:0;top:20%;bottom:20%;
+    width:1px;background:var(--line);
+  }
+  .stat-num{
+    font-family:"DIN","Roboto",Arial,sans-serif;
+    font-size:34px;
+    font-weight:700;
+    color:var(--kamoer-blue);
+    line-height:1;
+    letter-spacing:.5px;
+  }
+  .stat-num .unit{font-size:18px;margin-left:2px;}
+  .stat-label{
+    margin-top:12px;
+    font-size:14px;
+    color:var(--text-muted);
+  }
+
+  /* =========================================================
+     4. 两大业务领域
+     ========================================================= */
+  .domains{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    height:340px;
+  }
+  .domain{
+    position:relative;
+    overflow:hidden;
+    color:#fff;
+    cursor:pointer;
+  }
+  .domain .bg{
+    position:absolute;inset:0;
+    background-size:cover;
+    background-position:center;
+    transition:transform .8s var(--easing);
+  }
+  .domain:hover .bg{transform:scale(1.06);}
+  .domain .mask{
+    position:absolute;inset:0;
+    transition:opacity .4s var(--easing);
+  }
+  .domain.life .bg{
+    background-image:
+      linear-gradient(135deg, rgba(0,40,90,.2), rgba(0,30,70,.2)),
+      url("https://images.unsplash.com/photo-1559757175-08c2cf2dd0fb?auto=format&fit=crop&w=1400&q=80");
+  }
+  .domain.life .mask{background:linear-gradient(120deg, rgba(0,52,110,.78) 0%, rgba(0,80,150,.55) 100%);}
+  .domain.smart .bg{
+    background-image:
+      linear-gradient(135deg, rgba(40,80,30,.2), rgba(50,90,30,.2)),
+      url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=80");
+  }
+  .domain.smart .mask{background:linear-gradient(120deg, rgba(60,120,50,.7) 0%, rgba(120,170,70,.55) 100%);}
+  .domain:hover .mask{opacity:.85;}
+  .domain-inner{
+    position:relative;z-index:2;
+    height:100%;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:50px 60px;
+    max-width:600px;
+    margin:0 auto;
+  }
+  .domain-icon{
+    width:48px;height:48px;
+    border:1px solid rgba(255,255,255,.6);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:18px;
+  }
+  .domain h3{
+    font-size:30px;
+    font-weight:700;
+    margin:0 0 10px;
+    letter-spacing:1px;
+  }
+  .domain .sub{
+    font-size:15px;
+    color:rgba(255,255,255,.85);
+    margin-bottom:26px;
+    letter-spacing:.5px;
+  }
+  .domain-btn{
+    align-self:flex-start;
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 22px;
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.6);
+    color:#fff;
+    border-radius:3px;
+    font-size:13px;
+    transition:all .3s var(--easing);
+  }
+  .domain:hover .domain-btn{background:#fff;color:var(--kamoer-blue);transform:translateY(-2px);}
+  .domain.smart:hover .domain-btn{color:#5a8e2f;}
+
+  /* =========================================================
+     5. 微型泵产品体系
+     ========================================================= */
+  .section{
+    padding:90px 0;
+  }
+  .section-head{
+    text-align:center;
+    margin-bottom:50px;
+  }
+  .section-head h2{
+    font-size:32px;
+    color:var(--text-dark);
+    font-weight:700;
+    margin:0 0 14px;
+    letter-spacing:1px;
+  }
+  .section-head h2::after{
+    content:"";
+    display:block;
+    width:42px;height:3px;
+    background:var(--kamoer-blue);
+    margin:14px auto 0;
+    border-radius:2px;
+  }
+  .section-head p{
+    font-size:15px;
+    color:var(--text-muted);
+    max-width:780px;
+    margin:0 auto;
+    line-height:1.85;
+  }
+
+  .products{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:16px;
+  }
+  .product-card{
+    position:relative;
+    height:300px;
+    border-radius:6px;
+    overflow:hidden;
+    cursor:pointer;
+    box-shadow:var(--shadow-sm);
+    transition:transform .4s var(--easing), box-shadow .4s var(--easing);
+  }
+  .product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-lg);
+  }
+  .product-card .bg{
+    position:absolute;inset:0;
+    background-size:cover;
+    background-position:center;
+    transition:transform .8s var(--easing);
+  }
+  .product-card:hover .bg{transform:scale(1.08);}
+  .product-card::after{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(2,15,35,0) 35%, rgba(2,15,35,.85) 100%);
+  }
+  .product-card.featured::after{
+    background:linear-gradient(180deg, rgba(0,80,150,.15) 0%, rgba(0,55,115,.92) 100%);
+  }
+  .product-card .info{
+    position:absolute;
+    left:18px;right:18px;bottom:18px;
+    z-index:2;
+    color:#fff;
+  }
+  .product-card .info h4{
+    font-size:18px;font-weight:700;margin:0 0 6px;letter-spacing:.5px;
+  }
+  .product-card .info p{
+    font-size:12px;line-height:1.6;
+    color:rgba(255,255,255,.78);
+    margin:0;
+  }
+  .product-card .info .arr{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:28px;height:28px;
+    border:1px solid rgba(255,255,255,.55);
+    border-radius:50%;
+    margin-top:14px;
+    transition:all .3s var(--easing);
+  }
+  .product-card:hover .info .arr{background:#fff;color:var(--kamoer-blue);transform:translateX(4px);}
+
+  /* 各卡片背景 */
+  .product-card.p1 .bg{background-image:url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=80");}
+  .product-card.p2 .bg{background-image:url("https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=80");}
+  .product-card.p3 .bg{background-image:url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80");}
+  .product-card.p4 .bg{background-image:url("https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=900&q=80");}
+  .product-card.p5 .bg{background-image:url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80");}
+
+  /* =========================================================
+     6. 关于我们
+     ========================================================= */
+  .about{
+    background:#fff;
+    padding:100px 0 90px;
+  }
+  .about-inner{
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:80px;
+    align-items:center;
+  }
+  .about-brand{
+    text-align:left;
+  }
+  .about-brand .big-logo{
+    font-family:Arial,sans-serif;
+    font-size:48px;
+    font-weight:800;
+    color:var(--kamoer-blue);
+    letter-spacing:2px;
+    line-height:1;
+  }
+  .about-brand .slogan{
+    margin-top:14px;
+    font-size:14px;
+    color:var(--text-muted);
+    letter-spacing:6px;
+    border-left:3px solid var(--kamoer-blue);
+    padding-left:12px;
+  }
+  .about-brand .slogan-en{
+    margin-top:18px;
+    font-size:12px;
+    color:var(--text-soft);
+    letter-spacing:1px;
+    font-family:Arial,sans-serif;
+  }
+  .about-text h2{
+    font-size:30px;
+    font-weight:700;
+    color:var(--text-dark);
+    margin:0 0 20px;
+  }
+  .about-text h2::before{
+    content:"";
+    display:inline-block;
+    width:4px;height:22px;
+    background:var(--kamoer-blue);
+    margin-right:12px;
+    vertical-align:-4px;
+    border-radius:2px;
+  }
+  .about-text p{
+    font-size:15px;
+    color:var(--text-muted);
+    line-height:2;
+    margin:0 0 26px;
+  }
+  .about-text .btn{padding:11px 24px;}
+
+  .capabilities{
+    margin-top:70px;
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:20px;
+  }
+  .cap-item{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:30px 16px 26px;
+    text-align:center;
+    transition:all .35s var(--easing);
+  }
+  .cap-item:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow-md);
+    border-color:transparent;
+  }
+  .cap-item.highlight{
+    background:linear-gradient(180deg,#fff,#f6fbff);
+    border-color:transparent;
+    box-shadow:var(--shadow-md);
+    transform:translateY(-6px);
+  }
+  .cap-icon{
+    width:48px;height:48px;
+    margin:0 auto 14px;
+    color:var(--kamoer-blue);
+  }
+  .cap-item .label{
+    font-size:14px;
+    color:var(--text-body);
+    font-weight:500;
+  }
+
+  /* =========================================================
+     7. 最新动态
+     ========================================================= */
+  .news{
+    background:var(--bg-soft);
+    padding:90px 0;
+  }
+  .news-head{
+    display:flex;align-items:flex-end;justify-content:space-between;
+    margin-bottom:36px;
+  }
+  .news-head .left h2{
+    font-size:30px;
+    margin:0 0 6px;
+    color:var(--text-dark);
+    font-weight:700;
+  }
+  .news-head .left .en{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    letter-spacing:6px;
+    color:var(--kamoer-blue);
+    text-transform:uppercase;
+  }
+  .news-head .more{
+    font-size:14px;
+    color:var(--text-muted);
+    transition:color .25s var(--easing);
+  }
+  .news-head .more:hover{color:var(--kamoer-blue);}
+
+  .news-feature{
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:60% 40%;
+    box-shadow:var(--shadow-sm);
+    margin-bottom:24px;
+    transition:all .35s var(--easing);
+  }
+  .news-feature:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+  .news-feature .img{
+    height:300px;
+    background-size:cover;background-position:center;
+    background-image:url("https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=80");
+    transition:transform .8s var(--easing);
+  }
+  .news-feature:hover .img{transform:scale(1.04);}
+  .news-feature .body{
+    padding:36px 40px;
+    display:flex;flex-direction:column;justify-content:center;
+  }
+  .tag{
+    display:inline-block;
+    padding:4px 10px;
+    background:var(--kamoer-blue-soft);
+    color:var(--kamoer-blue);
+    font-size:12px;
+    border-radius:3px;
+    margin-bottom:14px;
+  }
+  .news-feature h3{
+    font-size:20px;
+    line-height:1.5;
+    color:var(--text-dark);
+    margin:0 0 14px;
+    font-weight:600;
+  }
+  .news-feature .summary{
+    font-size:14px;
+    color:var(--text-muted);
+    line-height:1.85;
+    margin:0 0 22px;
+  }
+  .news-feature .meta{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:13px;color:var(--text-soft);
+    border-top:1px solid var(--line);
+    padding-top:14px;
+  }
+  .news-feature .read-more{color:var(--kamoer-blue);}
+
+  .news-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .news-card{
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    transition:all .35s var(--easing);
+    cursor:pointer;
+  }
+  .news-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .news-card .img{
+    height:170px;
+    background-size:cover;background-position:center;
+    transition:transform .8s var(--easing);
+  }
+  .news-card:hover .img{transform:scale(1.06);}
+  .news-card .body{padding:22px 22px 24px;}
+  .news-card h4{
+    font-size:15px;
+    line-height:1.6;
+    color:var(--text-dark);
+    margin:10px 0 14px;
+    font-weight:600;
+    min-height:48px;
+  }
+  .news-card .meta{
+    font-size:12px;
+    color:var(--text-soft);
+    display:flex;justify-content:space-between;
+  }
+  .news-card .meta .read-more{color:var(--kamoer-blue);}
+  .news-card.n1 .img{background-image:url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80");}
+  .news-card.n2 .img{background-image:url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=80");}
+  .news-card.n3 .img{background-image:url("https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=80");}
+
+  /* =========================================================
+     8. CTA 横幅
+     ========================================================= */
+  .cta{
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 80% 50%, rgba(0,140,220,.35), transparent 60%),
+      linear-gradient(120deg,#0a3a6b 0%,#0075B6 60%,#1494d8 100%);
+    color:#fff;
+  }
+  .cta::before{
+    content:"";
+    position:absolute;
+    right:-100px;top:-100px;
+    width:520px;height:520px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.18),transparent 60%);
+    pointer-events:none;
+  }
+  .cta::after{
+    content:"";
+    position:absolute;
+    left:-80px;bottom:-160px;
+    width:380px;height:380px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(120,200,255,.25),transparent 60%);
+    pointer-events:none;
+  }
+  .cta-wave{
+    position:absolute;inset:0;
+    opacity:.25;
+    background-image:
+      radial-gradient(circle at 20% 80%, rgba(255,255,255,.4) 0%, transparent 30%),
+      radial-gradient(circle at 70% 30%, rgba(255,255,255,.3) 0%, transparent 35%);
+  }
+  .cta-inner{
+    position:relative;z-index:2;
+    max-width:var(--container);
+    margin:0 auto;
+    padding:60px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:40px;
+    min-height:240px;
+  }
+  .cta-text h2{
+    font-size:30px;
+    font-weight:700;
+    margin:0 0 14px;
+    letter-spacing:1px;
+  }
+  .cta-text p{
+    font-size:15px;
+    color:rgba(255,255,255,.85);
+    margin:0;
+    max-width:680px;
+    line-height:1.85;
+  }
+  .cta-action .btn{
+    background:#fff;
+    color:var(--kamoer-blue);
+    padding:14px 32px;
+    font-weight:600;
+    font-size:15px;
+  }
+  .cta-action .btn:hover{background:#0a1b3d;color:#fff;}
+
+  /* =========================================================
+     9. 页脚 Footer
+     ========================================================= */
+  .footer{
+    background:#fff;
+    border-top:none;
+    position:relative;
+  }
+  .footer-line{
+    height:3px;
+    background:linear-gradient(90deg, var(--kamoer-blue) 0%, var(--kamoer-blue) 78%, var(--kamoer-green) 78%, var(--kamoer-green) 92%, var(--line) 92%);
+  }
+  .footer-top{
+    padding:60px 0 40px;
+  }
+  .certs{
+    display:flex;
+    justify-content:flex-end;
+    gap:24px;
+    margin-bottom:30px;
+    color:var(--text-soft);
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:1px;
+  }
+  .cert{
+    border:1px solid var(--line);
+    padding:6px 14px;
+    border-radius:3px;
+    font-weight:600;
+    color:var(--text-muted);
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:50px;
+  }
+  .foot-brand .big-logo{
+    font-family:Arial,sans-serif;
+    font-size:32px;
+    font-weight:800;
+    color:var(--kamoer-blue);
+    letter-spacing:2px;
+    margin-bottom:8px;
+  }
+  .foot-brand .corp{
+    font-size:13px;
+    color:var(--text-body);
+    margin-bottom:18px;
+    font-weight:500;
+  }
+  .foot-brand .desc{
+    font-size:13px;
+    color:var(--text-muted);
+    line-height:1.85;
+    margin-bottom:18px;
+    max-width:320px;
+  }
+  .foot-brand .phone{
+    font-family:Arial,sans-serif;
+    font-size:22px;
+    font-weight:700;
+    color:var(--kamoer-blue);
+    letter-spacing:1px;
+  }
+  .foot-brand .phone-label{
+    font-size:12px;color:var(--text-soft);margin-bottom:4px;
+  }
+  .foot-col h5{
+    font-size:14px;
+    color:var(--text-dark);
+    font-weight:600;
+    margin:0 0 18px;
+    position:relative;
+  }
+  .foot-col ul{list-style:none;margin:0;padding:0;}
+  .foot-col li{margin-bottom:11px;}
+  .foot-col a{
+    font-size:13px;color:var(--text-muted);
+    transition:color .2s var(--easing);
+  }
+  .foot-col a:hover{color:var(--kamoer-blue);}
+
+  .footer-bottom{
+    border-top:1px solid var(--line);
+    padding:18px 0;
+    font-size:12px;
+    color:var(--text-soft);
+    display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .footer-bottom a{color:var(--text-soft);}
+  .footer-bottom a:hover{color:var(--kamoer-blue);}
+
+  /* =========================================================
+     响应式
+     ========================================================= */
+  @media (max-width: 1024px){
+    .hero h1{font-size:36px;}
+    .products{grid-template-columns:repeat(3,1fr);}
+    .product-card:nth-child(n+4){display:none;}
+    .products.tablet-show .product-card{display:block !important;}
+    .news-grid{grid-template-columns:repeat(2,1fr);}
+    .news-card.n3{display:none;}
+    .about-inner{grid-template-columns:1fr;gap:40px;text-align:left;}
+    .capabilities{grid-template-columns:repeat(3,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:40px;}
+  }
+  @media (max-width: 768px){
+    .nav-menu, .nav-icons .lang-switch{display:none;}
+    .nav-icons .icon-btn:not(:last-child){display:none;}
+    .menu-toggle{display:flex;}
+    .nav-menu.open{
+      display:flex;flex-direction:column;
+      position:absolute;top:60px;left:0;right:0;
+      background:#fff;
+      padding:14px 24px 22px;
+      border-bottom:1px solid var(--line);
+      gap:0;
+      box-shadow:0 8px 18px rgba(0,0,0,.06);
+    }
+    .nav-menu.open li{
+      width:100%;
+      padding:12px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .nav-menu.open li:last-child{border-bottom:none;}
+    .nav-menu.open li.active a::after{display:none;}
+
+    .hero{height:auto;padding:80px 0 70px;}
+    .hero h1{font-size:28px;}
+    .hero p.lead{font-size:14px;}
+    .hero-content{max-width:100%;}
+
+    .stats{padding:30px 0;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:24px 12px;}
+    .stat-item:not(:last-child)::after{display:none;}
+    .stat-item:nth-child(odd){border-right:1px solid var(--line);}
+    .stat-num{font-size:26px;}
+
+    .domains{grid-template-columns:1fr;height:auto;}
+    .domain{height:260px;}
+    .domain-inner{padding:40px 28px;}
+    .domain h3{font-size:24px;}
+
+    .section{padding:60px 0;}
+    .section-head h2{font-size:24px;}
+
+    .products{
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+    .product-card{height:220px;}
+    .product-card:nth-child(n+4){display:block;}
+
+    .about{padding:60px 0;}
+    .about-text h2{font-size:24px;}
+    .capabilities{grid-template-columns:repeat(2,1fr);}
+
+    .news{padding:60px 0;}
+    .news-feature{grid-template-columns:1fr;}
+    .news-feature .img{height:220px;}
+    .news-feature .body{padding:24px;}
+    .news-feature h3{font-size:17px;}
+    .news-grid{grid-template-columns:1fr;}
+    .news-card.n3{display:block;}
+
+    .cta-inner{flex-direction:column;align-items:flex-start;text-align:left;padding:50px 24px;}
+    .cta-text h2{font-size:22px;}
+
+    .footer-top{padding:40px 0 24px;}
+    .footer-grid{grid-template-columns:1fr;gap:30px;}
+    .certs{justify-content:flex-start;flex-wrap:wrap;gap:10px;}
+    .footer-bottom{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== 1. Navbar ============== -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo" aria-label="Kamoer">
+      <span class="logo-mark">K</span>
+      <span>
+        <span class="logo-text">Kamoer</span>
+        <span class="logo-sub">卡默尔</span>
+      </span>
+    </a>
+
+    <ul class="nav-menu" id="navMenu">
+      <li class="active"><a href="#">产品中心</a></li>
+      <li><a href="#">行业应用</a></li>
+      <li><a href="#">解决方案</a></li>
+      <li><a href="#news">新闻资讯</a></li>
+      <li><a href="#about">关于我们</a></li>
+      <li><a href="#">联系我们</a></li>
+    </ul>
+
+    <div class="nav-icons">
+      <button class="icon-btn" aria-label="搜索">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="语言">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+      </button>
+      <span class="lang-switch"><span class="active-lang">中文</span> / EN</span>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============== 2. Hero Banner ============== -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="hero-eyebrow">GLOBAL · MICRO PUMP · SINCE 2005</span>
+      <h1>世界级<span class="accent">可靠</span>微型泵<br/>领军企业</h1>
+      <p class="lead">Kamoer 卡默尔专注微型泵、精密流体控制与可靠流体传输解决方案，服务生命科学、医疗设备、智慧生活与工业自动化等多元场景。</p>
+      <div class="hero-actions">
+        <a href="#about" class="btn btn-primary">了解卡默尔 <span class="arr">→</span></a>
+        <a href="#" class="btn btn-ghost">探索解决方案 <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 3. 数据统计 ============== -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num"><span data-count="15000">0</span><span class="unit">㎡</span></div>
+        <div class="stat-label">产研制造基地</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span data-count="20">0</span><span class="unit">+</span></div>
+        <div class="stat-label">市场验证</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span data-count="550">0</span><span class="unit">+</span></div>
+        <div class="stat-label">国家专利</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span data-count="100">0</span><span class="unit">+</span></div>
+        <div class="stat-label">国家和地区</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 4. 两大业务领域 ============== -->
+<section class="domains">
+  <a class="domain life" href="#">
+    <div class="bg"></div>
+    <div class="mask"></div>
+    <div class="domain-inner">
+      <div class="domain-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M9 2v6l-4 6a4 4 0 0 0 4 6h6a4 4 0 0 0 4-6l-4-6V2"/><path d="M9 2h6"/></svg>
+      </div>
+      <h3>生命科学</h3>
+      <div class="sub">精准流体方案 · Life Science Solution</div>
+      <span class="domain-btn">查看生命科学方案 <span class="arr">→</span></span>
+    </div>
+  </a>
+
+  <a class="domain smart" href="#">
+    <div class="bg"></div>
+    <div class="mask"></div>
+    <div class="domain-inner">
+      <div class="domain-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+      </div>
+      <h3>智慧生活</h3>
+      <div class="sub">流体创新方案 · Smart Life Solution</div>
+      <span class="domain-btn">查看智慧生活方案 <span class="arr">→</span></span>
+    </div>
+  </a>
+</section>
+
+<!-- ============== 5. 完整的微型泵产品体系 ============== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>完整的微型泵产品体系</h2>
+      <p>围绕设备集成、精准分配、连续输送、负压抽吸与复杂介质控制，Kamoer 提供覆盖多场景的微型泵产品矩阵。</p>
+    </div>
+
+    <div class="products">
+      <a href="#" class="product-card p1 featured">
+        <div class="bg"></div>
+        <div class="info">
+          <h4>蠕动泵</h4>
+          <p>精准输送 · 易维护 · 无污染传输</p>
+          <span class="arr">→</span>
+        </div>
+      </a>
+      <a href="#" class="product-card p2">
+        <div class="bg"></div>
+        <div class="info">
+          <h4>隔膜液泵</h4>
+          <p>自吸输送 · 耐腐蚀 · 稳定输出</p>
+          <span class="arr">→</span>
+        </div>
+      </a>
+      <a href="#" class="product-card p3">
+        <div class="bg"></div>
+        <div class="info">
+          <h4>隔膜气泵</h4>
+          <p>真空抽吸 · 气体输送 · 小型集成</p>
+          <span class="arr">→</span>
+        </div>
+      </a>
+      <a href="#" class="product-card p4">
+        <div class="bg"></div>
+        <div class="info">
+          <h4>其他泵组</h4>
+          <p>定制模组 · OEM 集成 · 多通道方案</p>
+          <span class="arr">→</span>
+        </div>
+      </a>
+      <a href="#" class="product-card p5">
+        <div class="bg"></div>
+        <div class="info">
+          <h4>配件</h4>
+          <p>泵管 · 接头 · 阀体 · 控制器</p>
+          <span class="arr">→</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 6. 关于我们 ============== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-brand">
+        <div class="big-logo">Kamoer</div>
+        <div class="slogan">精密流体 · 可靠传输</div>
+        <div class="slogan-en">RELIABLE FLUID TECHNOLOGY · SINCE 2005</div>
+      </div>
+      <div class="about-text">
+        <h2>关于我们</h2>
+        <p>Kamoer 卡默尔自 2005 年成立以来，长期专注于微型泵、精密流体控制与可靠流体传输技术。公司服务生命科学、医疗设备、实验室仪器、智能设备、食品饮料、工业自动化等行业，为全球客户提供稳定可靠的产品与 OEM/ODM 解决方案。</p>
+        <a href="#" class="btn btn-primary">了解更多 <span class="arr">→</span></a>
+      </div>
+    </div>
+
+    <div class="capabilities">
+      <div class="cap-item">
+        <svg class="cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6l4 6-7 12L2 9z"/><path d="M9 3 5 9l7 12 7-12-4-6"/><path d="M2 9h20"/></svg>
+        <div class="label">研发实力</div>
+      </div>
+      <div class="cap-item">
+        <svg class="cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-7h6v7"/></svg>
+        <div class="label">生产可靠</div>
+      </div>
+      <div class="cap-item highlight">
+        <svg class="cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div class="label">质量体系</div>
+      </div>
+      <div class="cap-item">
+        <svg class="cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="m9 14-2 8 5-3 5 3-2-8"/></svg>
+        <div class="label">认证资质</div>
+      </div>
+      <div class="cap-item">
+        <svg class="cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a14 14 0 0 1 0 20M12 2a14 14 0 0 0 0 20"/></svg>
+        <div class="label">全球服务</div>
+      </div>
+      <div class="cap-item">
+        <svg class="cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m12 2 3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        <div class="label">定制能力</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 7. 最新动态 ============== -->
+<section class="news" id="news">
+  <div class="container">
+    <div class="news-head">
+      <div class="left">
+        <h2>最新动态</h2>
+        <div class="en">NEWS</div>
+      </div>
+      <a href="#" class="more">查看全部 ›</a>
+    </div>
+
+    <a href="#" class="news-feature">
+      <div class="img"></div>
+      <div class="body">
+        <span class="tag">行业洞察</span>
+        <h3>IVD 行业扩容背景下，微型泵成为关键流体部件</h3>
+        <p class="summary">随着生命科学仪器与医疗诊断设备持续升级，微型泵在样本输送、试剂分配、清洗排废等环节发挥着越来越重要的作用。Kamoer 持续以可靠性与稳定性服务全球客户。</p>
+        <div class="meta">
+          <span>2026-05-12</span>
+          <span class="read-more">阅读更多 →</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="news-grid">
+      <a href="#" class="news-card n1">
+        <div class="img"></div>
+        <div class="body">
+          <span class="tag">选型指南</span>
+          <h4>IVD 行业背景下，微型泵选型的十大关键点</h4>
+          <div class="meta"><span>2026-05-08</span><span class="read-more">阅读更多 →</span></div>
+        </div>
+      </a>
+      <a href="#" class="news-card n2">
+        <div class="img"></div>
+        <div class="body">
+          <span class="tag">企业资讯</span>
+          <h4>Kamoer 卡默尔通过 ISO 13485 医疗器械质量体系认证</h4>
+          <div class="meta"><span>2026-04-22</span><span class="read-more">阅读更多 →</span></div>
+        </div>
+      </a>
+      <a href="#" class="news-card n3">
+        <div class="img"></div>
+        <div class="body">
+          <span class="tag">技术应用</span>
+          <h4>微型泵在自动化设备中的可靠流体控制应用</h4>
+          <div class="meta"><span>2026-04-10</span><span class="read-more">阅读更多 →</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 8. CTA 横幅 ============== -->
+<section class="cta">
+  <div class="cta-wave"></div>
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>寻找可靠的微型泵解决方案？</h2>
+      <p>告诉我们您的应用场景、介质、流量、压力和控制需求，Kamoer 工程团队将为您推荐合适的产品方案。</p>
+    </div>
+    <div class="cta-action">
+      <a href="#" class="btn">联系工程师 <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 9. Footer ============== -->
+<footer class="footer">
+  <div class="footer-line"></div>
+  <div class="container footer-top">
+    <div class="certs">
+      <span class="cert">CE</span>
+      <span class="cert">RoHS</span>
+      <span class="cert">ISO 9001</span>
+      <span class="cert">ISO 13485</span>
+      <span class="cert">REACH</span>
+    </div>
+
+    <div class="footer-grid">
+      <div class="foot-brand">
+        <div class="big-logo">Kamoer</div>
+        <div class="corp">Kamoer Fluid Tech (Shanghai) Co., Ltd.</div>
+        <div class="desc">专注微型泵、精密流体控制与可靠流体传输技术，服务全球客户超 100 个国家和地区。</div>
+        <div class="phone-label">销售咨询</div>
+        <div class="phone">133 1180 1915</div>
+      </div>
+
+      <div class="foot-col">
+        <h5>栏目</h5>
+        <ul>
+          <li><a href="#">产品中心</a></li>
+          <li><a href="#">行业应用</a></li>
+          <li><a href="#">解决方案</a></li>
+          <li><a href="#">新闻资讯</a></li>
+          <li><a href="#">关于我们</a></li>
+          <li><a href="#">联系我们</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>产品</h5>
+        <ul>
+          <li><a href="#">蠕动泵</a></li>
+          <li><a href="#">隔膜液泵</a></li>
+          <li><a href="#">隔膜气泵</a></li>
+          <li><a href="#">实验室泵</a></li>
+          <li><a href="#">配件</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>支持</h5>
+        <ul>
+          <li><a href="#">资料下载</a></li>
+          <li><a href="#">选型支持</a></li>
+          <li><a href="#">技术服务</a></li>
+          <li><a href="#">常见问题</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <div>© 2026 Kamoer Fluid Tech (Shanghai) Co., Ltd. All Rights Reserved.</div>
+    <div><a href="#">沪ICP备XXXXXXXX号</a> · <a href="#">隐私政策</a> · <a href="#">网站地图</a></div>
+  </div>
+</footer>
+
+<script>
+  /* ============== 导航栏滚动效果 ============== */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  /* ============== 移动端菜单 ============== */
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+  });
+  navMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navMenu.classList.remove('open'));
+  });
+
+  /* ============== 数据统计数字滚动 ============== */
+  function animateCount(el) {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    const duration = 1400;
+    const startTime = performance.now();
+    function frame(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      // easeOutCubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(target * eased);
+      el.textContent = target >= 1000 ? current.toLocaleString() : current;
+      if (progress < 1) requestAnimationFrame(frame);
+      else el.textContent = target >= 1000 ? target.toLocaleString() : target;
+    }
+    requestAnimationFrame(frame);
+  }
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('[data-count]').forEach(el => {
+          if (!el.dataset.done) {
+            animateCount(el);
+            el.dataset.done = '1';
+          }
+        });
+        statObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('.stats').forEach(el => statObserver.observe(el));
+
+  /* ============== 模块淡入动画 ============== */
+  const fadeEls = document.querySelectorAll('.section-head, .product-card, .news-feature, .news-card, .cap-item, .domain, .about-inner');
+  fadeEls.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .6s var(--easing), transform .6s var(--easing)';
+  });
+  const fadeObs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        const delay = (i % 5) * 60;
+        setTimeout(() => {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }, delay);
+        fadeObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => fadeObs.observe(el));
+</script>
+</body>
+</html>
