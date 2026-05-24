@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>微型泵 IVD 体外诊断解决方案 | Kamoer 卡默尔</title>
+<meta name="description" content="Kamoer 卡默尔为 IVD 体外诊断仪器提供完整的微型泵解决方案，覆盖生化、化学发光、血液、凝血、ELISA、尿液、分子诊断、POCT 等设备的样品吸取、试剂分配、清洗排废、气路控制等核心流体环节。" />
+<style>
+  /* =========================================================
+     Kamoer · IVD 解决方案页面 · 全局样式
+     ========================================================= */
+  :root{
+    --kamoer-blue:#0075B6;
+    --kamoer-blue-deep:#005C92;
+    --kamoer-blue-dark:#0A1B3D;
+    --kamoer-blue-soft:#E8F2FA;
+    --kamoer-green:#7AB648;
+    --kamoer-green-soft:#A8CC6E;
+    --text-dark:#1a1a1a;
+    --text-body:#333333;
+    --text-muted:#666666;
+    --text-soft:#8a8a8a;
+    --line:#e6e8eb;
+    --bg-soft:#F7F9FB;
+    --shadow-sm:0 2px 8px rgba(0,0,0,.04);
+    --shadow-md:0 6px 20px rgba(0,30,70,.08);
+    --shadow-lg:0 14px 38px rgba(0,30,70,.12);
+    --container:1200px;
+    --easing:cubic-bezier(.25,.46,.45,.94);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC","Helvetica Neue",Arial,sans-serif;
+    color:var(--text-body);
+    background:#fff;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  .container{max-width:var(--container);margin:0 auto;padding:0 24px;}
+
+  /* ============== Navbar (与首页一致) ============== */
+  .navbar{
+    position:fixed;top:0;left:0;right:0;height:60px;background:#fff;
+    border-bottom:1px solid var(--line);z-index:1000;
+    transition:box-shadow .3s var(--easing);
+  }
+  .navbar.scrolled{box-shadow:0 2px 10px rgba(0,0,0,.06);}
+  .nav-inner{
+    max-width:var(--container);margin:0 auto;height:100%;padding:0 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:22px;color:var(--kamoer-blue);}
+  .logo-mark{
+    width:32px;height:32px;border-radius:6px;
+    background:linear-gradient(135deg,var(--kamoer-blue) 0%,var(--kamoer-blue-deep) 100%);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;
+    font-family:Arial,sans-serif;
+  }
+  .logo-text{font-family:Arial,Helvetica,sans-serif;}
+  .logo-sub{font-size:12px;color:var(--text-muted);font-weight:400;margin-left:2px;}
+  .nav-menu{display:flex;align-items:center;gap:34px;list-style:none;margin:0;padding:0;}
+  .nav-menu a{font-size:14px;color:#333;position:relative;padding:6px 0;transition:color .25s var(--easing);}
+  .nav-menu a:hover{color:var(--kamoer-blue);}
+  .nav-menu li.active a{color:var(--kamoer-blue);font-weight:600;}
+  .nav-menu li.active a::after{
+    content:"";position:absolute;left:50%;bottom:-4px;transform:translateX(-50%);
+    width:18px;height:2px;background:var(--kamoer-blue);border-radius:2px;
+  }
+  .nav-icons{display:flex;align-items:center;gap:16px;}
+  .nav-icons .icon-btn{
+    width:32px;height:32px;display:flex;align-items:center;justify-content:center;
+    color:var(--text-muted);border-radius:50%;transition:all .25s var(--easing);
+  }
+  .nav-icons .icon-btn:hover{color:var(--kamoer-blue);background:var(--kamoer-blue-soft);}
+  .lang-switch{font-size:13px;color:var(--text-muted);padding-left:14px;border-left:1px solid var(--line);}
+  .lang-switch .active-lang{color:var(--kamoer-blue);font-weight:600;}
+  .menu-toggle{display:none;flex-direction:column;gap:5px;width:28px;height:28px;align-items:center;justify-content:center;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:#333;border-radius:2px;}
+
+  /* ============== Page Hero (主题Banner) ============== */
+  .page-hero{
+    position:relative;margin-top:60px;height:380px;overflow:hidden;
+    background:
+      radial-gradient(ellipse at 70% 50%, rgba(0,117,182,.45) 0%, transparent 55%),
+      radial-gradient(ellipse at 30% 80%, rgba(0,40,90,.6) 0%, transparent 60%),
+      linear-gradient(135deg,#04142e 0%,#071c43 45%,#0a2554 100%);
+    color:#fff;
+  }
+  .page-hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(2px 2px at 12% 22%, rgba(120,200,255,.9), transparent 60%),
+      radial-gradient(1.5px 1.5px at 28% 68%, rgba(180,220,255,.7), transparent 60%),
+      radial-gradient(1px 1px at 45% 35%, rgba(160,200,255,.8), transparent 60%),
+      radial-gradient(2.5px 2.5px at 62% 18%, rgba(120,200,255,.9), transparent 60%),
+      radial-gradient(1px 1px at 78% 55%, rgba(200,225,255,.7), transparent 60%),
+      radial-gradient(1.5px 1.5px at 88% 30%, rgba(140,210,255,.85), transparent 60%);
+    opacity:.95;
+  }
+  .page-hero-grid{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(120,180,255,.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(120,180,255,.06) 1px,transparent 1px);
+    background-size:60px 60px;
+    mask-image:radial-gradient(ellipse at 60% 50%, #000 30%, transparent 70%);
+    -webkit-mask-image:radial-gradient(ellipse at 60% 50%, #000 30%, transparent 70%);
+  }
+  .page-hero-inner{
+    position:relative;z-index:2;max-width:var(--container);margin:0 auto;
+    height:100%;padding:0 24px;display:flex;flex-direction:column;justify-content:center;
+  }
+  .crumb{
+    display:flex;gap:6px;align-items:center;font-size:13px;color:rgba(255,255,255,.7);
+    margin-bottom:18px;letter-spacing:.5px;
+  }
+  .crumb a{color:rgba(255,255,255,.7);transition:color .2s var(--easing);}
+  .crumb a:hover{color:#fff;}
+  .crumb .sep{opacity:.5;}
+  .crumb .now{color:#fff;}
+  .page-hero h1{
+    font-size:42px;line-height:1.25;margin:0 0 18px;font-weight:700;letter-spacing:1px;max-width:760px;
+  }
+  .page-hero h1 .accent{color:#62c2ff;}
+  .page-hero p.lead{
+    font-size:15px;line-height:1.85;color:rgba(255,255,255,.85);margin:0;max-width:720px;
+  }
+
+  /* ============== 通用区块 ============== */
+  .section{padding:90px 0;}
+  .section.alt{background:var(--bg-soft);}
+  .section-head{text-align:center;margin-bottom:50px;}
+  .section-head h2{
+    font-size:30px;color:var(--text-dark);font-weight:700;margin:0 0 14px;letter-spacing:1px;
+  }
+  .section-head h2::after{
+    content:"";display:block;width:42px;height:3px;background:var(--kamoer-blue);
+    margin:14px auto 0;border-radius:2px;
+  }
+  .section-head p{
+    font-size:15px;color:var(--text-muted);max-width:780px;margin:0 auto;line-height:1.85;
+  }
+  .section-head .en{
+    font-family:Arial,sans-serif;font-size:13px;letter-spacing:6px;
+    color:var(--kamoer-blue);text-transform:uppercase;margin-bottom:8px;
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:12px 26px;font-size:14px;
+    border-radius:3px;transition:all .3s var(--easing);font-weight:500;letter-spacing:.5px;
+  }
+  .btn .arr{transition:transform .3s var(--easing);}
+  .btn:hover .arr{transform:translateX(4px);}
+  .btn-primary{background:var(--kamoer-blue);color:#fff;}
+  .btn-primary:hover{background:var(--kamoer-blue-deep);}
+
+  /* ============== 行业概况 + 关键数据 ============== */
+  .overview{padding:80px 0;}
+  .overview-grid{
+    display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;
+  }
+  .overview-text h2{
+    font-size:28px;color:var(--text-dark);font-weight:700;margin:0 0 20px;line-height:1.3;
+  }
+  .overview-text h2::before{
+    content:"";display:inline-block;width:4px;height:22px;background:var(--kamoer-blue);
+    margin-right:12px;vertical-align:-4px;border-radius:2px;
+  }
+  .overview-text p{font-size:15px;color:var(--text-muted);line-height:2;margin:0 0 14px;}
+  .overview-meta{
+    background:var(--bg-soft);border-radius:10px;padding:30px;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
+  }
+  .om-item{position:relative;}
+  .om-item .num{
+    font-family:"DIN","Roboto",Arial,sans-serif;font-size:32px;font-weight:700;
+    color:var(--kamoer-blue);line-height:1;
+  }
+  .om-item .num .unit{font-size:16px;margin-left:2px;}
+  .om-item .lbl{margin-top:10px;font-size:13px;color:var(--text-muted);}
+
+  /* ============== 六大核心功能 ============== */
+  .functions{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .fn-card{
+    background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:36px 28px;transition:all .35s var(--easing);position:relative;overflow:hidden;
+  }
+  .fn-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--kamoer-blue),#62c2ff);
+    transform:scaleX(0);transform-origin:left;transition:transform .4s var(--easing);
+  }
+  .fn-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent;}
+  .fn-card:hover::before{transform:scaleX(1);}
+  .fn-num{
+    font-family:Arial,sans-serif;font-size:13px;color:var(--kamoer-blue);font-weight:700;
+    letter-spacing:2px;margin-bottom:12px;
+  }
+  .fn-card h3{
+    font-size:19px;color:var(--text-dark);font-weight:700;margin:0 0 12px;
+  }
+  .fn-card .role{
+    font-size:13px;color:var(--text-muted);line-height:1.85;margin:0 0 16px;
+  }
+  .fn-card .pump-tags{
+    display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);
+  }
+  .pump-tag{
+    font-size:11px;padding:3px 10px;border-radius:999px;
+    background:var(--kamoer-blue-soft);color:var(--kamoer-blue);font-weight:500;letter-spacing:.5px;
+  }
+  .pump-tag.green{background:#eef7e2;color:#5a8e2f;}
+
+  /* ============== IVD 仪器适配 ============== */
+  .instruments{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
+  }
+  .ins-card{
+    background:#fff;border-radius:10px;overflow:hidden;
+    border:1px solid var(--line);transition:all .35s var(--easing);
+  }
+  .ins-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px);border-color:transparent;}
+  .ins-head{
+    padding:22px 28px;background:linear-gradient(135deg,var(--kamoer-blue) 0%,var(--kamoer-blue-deep) 100%);
+    color:#fff;display:flex;align-items:center;gap:14px;
+  }
+  .ins-icon{
+    width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.18);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .ins-head h3{font-size:18px;font-weight:700;margin:0;letter-spacing:.5px;}
+  .ins-head .en{font-size:12px;opacity:.78;letter-spacing:1px;display:block;margin-top:3px;}
+  .ins-body{padding:24px 28px 28px;}
+  .ins-body .role-row{
+    display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);
+    font-size:13.5px;line-height:1.7;
+  }
+  .ins-body .role-row:last-child{border-bottom:none;}
+  .ins-body .role-row .key{
+    flex:0 0 100px;color:var(--kamoer-blue);font-weight:600;
+  }
+  .ins-body .role-row .val{flex:1;color:var(--text-body);}
+  .ins-body .role-row .val .pump{
+    display:inline-block;font-size:11px;padding:1px 8px;background:var(--bg-soft);
+    color:var(--text-muted);border-radius:3px;margin-left:6px;font-weight:500;
+  }
+
+  /* ============== 推荐产品矩阵 ============== */
+  .products{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  }
+  .prod-card{
+    background:#fff;border-radius:10px;border:1px solid var(--line);overflow:hidden;
+    transition:all .35s var(--easing);
+  }
+  .prod-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent;}
+  .prod-img{
+    height:170px;background-size:cover;background-position:center;
+    background-color:var(--kamoer-blue-soft);position:relative;
+  }
+  .prod-img::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(2,15,35,0) 60%,rgba(2,15,35,.45) 100%);
+  }
+  .prod-card.pp1 .prod-img{background-image:url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=80");}
+  .prod-card.pp2 .prod-img{background-image:url("https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=80");}
+  .prod-card.pp3 .prod-img{background-image:url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80");}
+  .prod-card.pp4 .prod-img{background-image:url("https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=900&q=80");}
+  .prod-body{padding:22px 22px 24px;}
+  .prod-body h4{font-size:16px;color:var(--text-dark);font-weight:700;margin:0 0 6px;}
+  .prod-body .series{font-family:Arial,sans-serif;font-size:11px;color:var(--kamoer-blue);letter-spacing:1.5px;margin-bottom:12px;}
+  .prod-body ul{list-style:none;margin:0;padding:0;}
+  .prod-body li{
+    font-size:12.5px;color:var(--text-muted);padding:4px 0;line-height:1.6;
+    display:flex;align-items:flex-start;gap:6px;
+  }
+  .prod-body li::before{content:"·";color:var(--kamoer-blue);font-weight:700;font-size:18px;line-height:1;margin-top:-2px;}
+  .prod-body .scene{
+    font-size:11px;color:var(--kamoer-blue);background:var(--kamoer-blue-soft);
+    display:inline-block;padding:3px 9px;border-radius:3px;margin-top:10px;letter-spacing:.5px;
+  }
+
+  /* ============== 参数对比表 ============== */
+  .table-wrap{overflow-x:auto;border-radius:10px;box-shadow:var(--shadow-sm);background:#fff;}
+  table.spec{
+    width:100%;min-width:780px;border-collapse:collapse;font-size:13.5px;
+  }
+  table.spec thead th{
+    background:linear-gradient(180deg,var(--kamoer-blue) 0%,var(--kamoer-blue-deep) 100%);
+    color:#fff;text-align:left;padding:14px 18px;font-weight:600;font-size:13px;letter-spacing:.5px;
+  }
+  table.spec tbody td{
+    padding:14px 18px;border-bottom:1px solid var(--line);color:var(--text-body);vertical-align:top;
+  }
+  table.spec tbody tr:hover{background:var(--bg-soft);}
+  table.spec tbody tr:last-child td{border-bottom:none;}
+  table.spec td.pname{color:var(--kamoer-blue);font-weight:600;}
+
+  /* ============== 选型流程 ============== */
+  .selection{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;
+  }
+  .sel-step{
+    background:#fff;padding:30px 22px;text-align:center;border-radius:10px;
+    box-shadow:var(--shadow-sm);position:relative;transition:all .3s var(--easing);
+  }
+  .sel-step:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .sel-step:not(:last-child){margin-right:14px;}
+  .sel-num{
+    width:46px;height:46px;border-radius:50%;background:var(--kamoer-blue-soft);
+    color:var(--kamoer-blue);font-family:Arial,sans-serif;font-weight:700;font-size:20px;
+    display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
+  }
+  .sel-step h4{font-size:15px;color:var(--text-dark);margin:0 0 8px;font-weight:700;}
+  .sel-step p{font-size:12.5px;color:var(--text-muted);line-height:1.7;margin:0;}
+
+  /* ============== 服务能力 ============== */
+  .services{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .svc-card{
+    background:#fff;padding:32px 26px;border-radius:10px;text-align:center;
+    border:1px solid var(--line);transition:all .35s var(--easing);
+  }
+  .svc-card:hover{
+    transform:translateY(-4px);border-color:transparent;box-shadow:var(--shadow-md);
+    background:linear-gradient(180deg,#fff,#f6fbff);
+  }
+  .svc-icon{
+    width:56px;height:56px;margin:0 auto 16px;border-radius:50%;
+    background:var(--kamoer-blue-soft);color:var(--kamoer-blue);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .svc-card h4{font-size:16px;color:var(--text-dark);margin:0 0 8px;font-weight:700;}
+  .svc-card p{font-size:13px;color:var(--text-muted);line-height:1.75;margin:0;}
+
+  /* ============== 认证 ============== */
+  .certs-section{padding:60px 0;background:#fff;border-top:1px solid var(--line);}
+  .certs-section .row{
+    display:flex;gap:30px;align-items:center;justify-content:center;flex-wrap:wrap;
+  }
+  .cbadge{
+    border:1px solid var(--line);padding:14px 28px;border-radius:6px;
+    font-family:Arial,sans-serif;font-weight:700;color:var(--text-muted);letter-spacing:1px;
+    transition:all .3s var(--easing);
+  }
+  .cbadge:hover{border-color:var(--kamoer-blue);color:var(--kamoer-blue);transform:translateY(-2px);}
+
+  /* ============== CTA + Footer (与首页一致) ============== */
+  .cta{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(ellipse at 80% 50%, rgba(0,140,220,.35), transparent 60%),
+      linear-gradient(120deg,#0a3a6b 0%,#0075B6 60%,#1494d8 100%);
+    color:#fff;
+  }
+  .cta::before{
+    content:"";position:absolute;right:-100px;top:-100px;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.18),transparent 60%);pointer-events:none;
+  }
+  .cta::after{
+    content:"";position:absolute;left:-80px;bottom:-160px;width:380px;height:380px;border-radius:50%;
+    background:radial-gradient(circle,rgba(120,200,255,.25),transparent 60%);pointer-events:none;
+  }
+  .cta-inner{
+    position:relative;z-index:2;max-width:var(--container);margin:0 auto;padding:60px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:40px;min-height:240px;
+  }
+  .cta-text h2{font-size:30px;font-weight:700;margin:0 0 14px;letter-spacing:1px;}
+  .cta-text p{font-size:15px;color:rgba(255,255,255,.85);margin:0;max-width:680px;line-height:1.85;}
+  .cta-action .btn{background:#fff;color:var(--kamoer-blue);padding:14px 32px;font-weight:600;font-size:15px;}
+  .cta-action .btn:hover{background:#0a1b3d;color:#fff;}
+
+  .footer{background:#fff;position:relative;}
+  .footer-line{
+    height:3px;
+    background:linear-gradient(90deg, var(--kamoer-blue) 0%, var(--kamoer-blue) 78%, var(--kamoer-green) 78%, var(--kamoer-green) 92%, var(--line) 92%);
+  }
+  .footer-top{padding:60px 0 40px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;}
+  .foot-brand .big-logo{font-family:Arial,sans-serif;font-size:32px;font-weight:800;color:var(--kamoer-blue);letter-spacing:2px;margin-bottom:8px;}
+  .foot-brand .corp{font-size:13px;color:var(--text-body);margin-bottom:18px;font-weight:500;}
+  .foot-brand .desc{font-size:13px;color:var(--text-muted);line-height:1.85;margin-bottom:18px;max-width:320px;}
+  .foot-brand .phone{font-family:Arial,sans-serif;font-size:22px;font-weight:700;color:var(--kamoer-blue);letter-spacing:1px;}
+  .foot-brand .phone-label{font-size:12px;color:var(--text-soft);margin-bottom:4px;}
+  .foot-col h5{font-size:14px;color:var(--text-dark);font-weight:600;margin:0 0 18px;}
+  .foot-col ul{list-style:none;margin:0;padding:0;}
+  .foot-col li{margin-bottom:11px;}
+  .foot-col a{font-size:13px;color:var(--text-muted);transition:color .2s var(--easing);}
+  .foot-col a:hover{color:var(--kamoer-blue);}
+  .footer-bottom{
+    border-top:1px solid var(--line);padding:18px 0;font-size:12px;color:var(--text-soft);
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+  }
+  .footer-bottom a{color:var(--text-soft);}
+  .footer-bottom a:hover{color:var(--kamoer-blue);}
+
+  /* ============== 响应式 ============== */
+  @media (max-width:1024px){
+    .functions{grid-template-columns:repeat(2,1fr);}
+    .instruments{grid-template-columns:1fr;}
+    .products{grid-template-columns:repeat(2,1fr);}
+    .selection{grid-template-columns:repeat(2,1fr);gap:18px;}
+    .sel-step:not(:last-child){margin-right:0;}
+    .services{grid-template-columns:repeat(2,1fr);}
+    .overview-grid{grid-template-columns:1fr;gap:40px;}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:40px;}
+  }
+  @media (max-width:768px){
+    .nav-menu,.nav-icons .lang-switch{display:none;}
+    .nav-icons .icon-btn:not(:last-child){display:none;}
+    .menu-toggle{display:flex;}
+    .nav-menu.open{
+      display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;
+      background:#fff;padding:14px 24px 22px;border-bottom:1px solid var(--line);gap:0;
+      box-shadow:0 8px 18px rgba(0,0,0,.06);
+    }
+    .nav-menu.open li{width:100%;padding:12px 0;border-bottom:1px solid var(--line);}
+    .page-hero{height:auto;padding:70px 0 60px;}
+    .page-hero h1{font-size:28px;}
+    .section{padding:60px 0;}
+    .section-head h2{font-size:24px;}
+    .functions,.products,.services,.selection{grid-template-columns:1fr;}
+    .overview-meta{grid-template-columns:1fr;}
+    .ins-body .role-row{flex-direction:column;gap:4px;}
+    .ins-body .role-row .key{flex:none;}
+    .cta-inner{flex-direction:column;align-items:flex-start;text-align:left;padding:50px 24px;}
+    .cta-text h2{font-size:22px;}
+    .footer-grid{grid-template-columns:1fr;gap:30px;}
+    .footer-bottom{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== Navbar ============== -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="Kamoer">
+      <span class="logo-mark">K</span>
+      <span>
+        <span class="logo-text">Kamoer</span>
+        <span class="logo-sub">卡默尔</span>
+      </span>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">产品中心</a></li>
+      <li><a href="#">行业应用</a></li>
+      <li class="active"><a href="#">解决方案</a></li>
+      <li><a href="index.html#news">新闻资讯</a></li>
+      <li><a href="index.html#about">关于我们</a></li>
+      <li><a href="#">联系我们</a></li>
+    </ul>
+    <div class="nav-icons">
+      <button class="icon-btn" aria-label="搜索">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <span class="lang-switch"><span class="active-lang">中文</span> / EN</span>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============== Page Hero ============== -->
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="crumb">
+      <a href="index.html">首页</a><span class="sep">›</span>
+      <a href="#">解决方案</a><span class="sep">›</span>
+      <span class="now">IVD 体外诊断</span>
+    </div>
+    <h1>微型泵 <span class="accent">IVD 体外诊断</span><br/>整体解决方案</h1>
+    <p class="lead">面向生化、化学发光、血液、凝血、免疫、分子诊断等 IVD 仪器，Kamoer 卡默尔围绕样品吸取、试剂分配、清洗冲洗、废液排除、气路控制、流体输送六大核心环节，提供高精度、长寿命、易集成、可追溯的微型泵流体方案，满足 ISO 13485 体系下的医疗器械可靠性要求。</p>
+  </div>
+</section>
+
+<!-- ============== 行业概况 ============== -->
+<section class="overview">
+  <div class="container">
+    <div class="overview-grid">
+      <div class="overview-text">
+        <h2>IVD 行业流体控制的核心挑战</h2>
+        <p>体外诊断（In Vitro Diagnostics, IVD）是对取自人体的血液、尿液、组织等样本进行体外分析的医学技术。从生化指标到肿瘤标志物，从血常规到分子检测，IVD 几乎覆盖临床所有疾病的筛查、诊断与疗效评估。</p>
+        <p>作为 IVD 仪器的"血液循环系统"，微型泵承担着样品的吸取分配、试剂的精密计量、反应杯/探针的清洗冲洗、废液的排除以及气路的真空压力供给，其精度、稳定性、寿命、耐化学性直接决定了仪器的检测准确度、检测速度与维护成本。</p>
+      </div>
+      <div class="overview-meta">
+        <div class="om-item">
+          <div class="num">±1<span class="unit">% CV</span></div>
+          <div class="lbl">分注重复性精度</div>
+        </div>
+        <div class="om-item">
+          <div class="num">µL ~ mL<span class="unit">/min</span></div>
+          <div class="lbl">流量覆盖范围</div>
+        </div>
+        <div class="om-item">
+          <div class="num">5000<span class="unit">h+</span></div>
+          <div class="lbl">连续运行寿命</div>
+        </div>
+        <div class="om-item">
+          <div class="num">ISO<span class="unit"> 13485</span></div>
+          <div class="lbl">医疗器械质量体系</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 六大核心功能 ============== -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="en">CORE FUNCTIONS</div>
+      <h2>IVD 仪器中的六大流体功能</h2>
+      <p>从样本进入仪器到检测完成、清洗复位的全流程，微型泵承担着"吸、推、注、洗、排、控"六大关键动作。</p>
+    </div>
+
+    <div class="functions">
+      <div class="fn-card">
+        <div class="fn-num">FUNCTION 01</div>
+        <h3>样品吸取 Sample Aspiration</h3>
+        <p class="role">通过样本针/探针从样本杯中精确吸取微升级血液、尿液、血清等样本。要求吸量精确、无气泡、无交叉污染，是检测准确性的第一道关口。</p>
+        <div class="pump-tags">
+          <span class="pump-tag">注射泵</span>
+          <span class="pump-tag">柱塞泵</span>
+          <span class="pump-tag green">隔膜负压泵</span>
+        </div>
+      </div>
+      <div class="fn-card">
+        <div class="fn-num">FUNCTION 02</div>
+        <h3>试剂分注 Reagent Dispensing</h3>
+        <p class="role">将 R1/R2 试剂、底物、标记物、稀释液、缓冲液等以 µL 级精度分注至反应杯。是检测灵敏度与重复性的核心保证，CV 通常需控制在 1% 以内。</p>
+        <div class="pump-tags">
+          <span class="pump-tag">注射泵</span>
+          <span class="pump-tag">微量齿轮泵</span>
+          <span class="pump-tag">蠕动分注泵</span>
+        </div>
+      </div>
+      <div class="fn-card">
+        <div class="fn-num">FUNCTION 03</div>
+        <h3>清洗冲洗 Probe & Cuvette Wash</h3>
+        <p class="role">清洗探针内外壁防止 Carry-over 交叉污染，清洗反应杯/微孔板去除未结合物。供液与抽液协同工作，决定每一个测试的稳定输出。</p>
+        <div class="pump-tags">
+          <span class="pump-tag">蠕动泵</span>
+          <span class="pump-tag green">隔膜液泵</span>
+        </div>
+      </div>
+      <div class="fn-card">
+        <div class="fn-num">FUNCTION 04</div>
+        <h3>废液排除 Waste Removal</h3>
+        <p class="role">将反应残液、清洗废液从反应区彻底抽走至废液桶。耐多种试剂腐蚀、长期稳定运行是关键诉求，涉及到每一个反应单元的复位。</p>
+        <div class="pump-tags">
+          <span class="pump-tag">蠕动泵</span>
+          <span class="pump-tag green">隔膜抽吸泵</span>
+        </div>
+      </div>
+      <div class="fn-card">
+        <div class="fn-num">FUNCTION 05</div>
+        <h3>气路控制 Pneumatic Control</h3>
+        <p class="role">提供稳定真空驱动液体抽吸、提供正压推送鞘液或微流控液滴、实现微孔板气压清洗与气密性检测。脉动低、响应快是关键指标。</p>
+        <div class="pump-tags">
+          <span class="pump-tag">隔膜气泵</span>
+          <span class="pump-tag">真空泵</span>
+          <span class="pump-tag green">压电气泵</span>
+        </div>
+      </div>
+      <div class="fn-card">
+        <div class="fn-num">FUNCTION 06</div>
+        <h3>流体输送 Bulk Fluid Transfer</h3>
+        <p class="role">大体积稀释液、系统液、鞘液等从储液瓶持续输送至工作位。要求流量稳定、低脉动、长寿命，是仪器后台流路的基础动力。</p>
+        <div class="pump-tags">
+          <span class="pump-tag">齿轮泵</span>
+          <span class="pump-tag">蠕动泵</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 典型 IVD 仪器适配方案 ============== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="en">INSTRUMENT MAPPING</div>
+      <h2>典型 IVD 仪器的微型泵适配方案</h2>
+      <p>针对不同类型的 IVD 仪器，Kamoer 提供基于真实工况的整套流体匹配方案，覆盖核心检测仪器全场景。</p>
+    </div>
+
+    <div class="instruments">
+      <!-- 1. 生化分析仪 -->
+      <div class="ins-card">
+        <div class="ins-head">
+          <div class="ins-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M9 2v6l-4 6a4 4 0 0 0 4 6h6a4 4 0 0 0 4-6l-4-6V2"/><path d="M9 2h6"/></svg>
+          </div>
+          <div>
+            <h3>全自动生化分析仪</h3>
+            <span class="en">Clinical Chemistry Analyzer</span>
+          </div>
+        </div>
+        <div class="ins-body">
+          <div class="role-row"><div class="key">吸样/加样</div><div class="val">从样本杯精确吸取血清/血浆，分注 R1/R2 试剂到反应杯<span class="pump">注射泵</span></div></div>
+          <div class="role-row"><div class="key">探针清洗</div><div class="val">每次吸样后冲洗探针内外壁，避免交叉污染<span class="pump">蠕动泵</span></div></div>
+          <div class="role-row"><div class="key">反应杯清洗</div><div class="val">多通道清洗站供水/抽水协同<span class="pump">隔膜液泵</span></div></div>
+          <div class="role-row"><div class="key">废液排放</div><div class="val">将比色废液集中输送至废液桶<span class="pump">蠕动泵</span></div></div>
+          <div class="role-row"><div class="key">气路</div><div class="val">真空辅助液面探测、管路排空<span class="pump">隔膜气泵</span></div></div>
+        </div>
+      </div>
+
+      <!-- 2. 化学发光免疫分析仪 -->
+      <div class="ins-card">
+        <div class="ins-head">
+          <div class="ins-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <div>
+            <h3>化学发光免疫分析仪</h3>
+            <span class="en">CLIA Immunoassay Analyzer</span>
+          </div>
+        </div>
+        <div class="ins-body">
+          <div class="role-row"><div class="key">微量吸样</div><div class="val">血清/血浆超低体积（10-50 µL）精密吸取<span class="pump">高精度注射泵</span></div></div>
+          <div class="role-row"><div class="key">底物分注</div><div class="val">发光底物精准定量分注，CV ≤ 1%<span class="pump">微量分注泵</span></div></div>
+          <div class="role-row"><div class="key">B/F 分离清洗</div><div class="val">磁珠+清洗液多次循环冲洗<span class="pump">蠕动泵</span></div></div>
+          <div class="role-row"><div class="key">废液抽吸</div><div class="val">配合磁分离工位负压抽吸废液<span class="pump">隔膜真空泵</span></div></div>
+          <div class="role-row"><div class="key">系统液输送</div><div class="val">大体积稀释液、清洗液稳定输送<span class="pump">齿轮泵</span></div></div>
+        </div>
+      </div>
+
+      <!-- 3. 血液细胞分析仪 -->
+      <div class="ins-card">
+        <div class="ins-head">
+          <div class="ins-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="9" cy="10" r="1.2" fill="#fff"/><circle cx="14" cy="13" r="1.2" fill="#fff"/></svg>
+          </div>
+          <div>
+            <h3>血液/血球分析仪</h3>
+            <span class="en">Hematology Analyzer</span>
+          </div>
+        </div>
+        <div class="ins-body">
+          <div class="role-row"><div class="key">样本吸取</div><div class="val">真空抽吸全血样本通过计数小孔<span class="pump">真空泵</span></div></div>
+          <div class="role-row"><div class="key">稀释剂分注</div><div class="val">三分群/五分群稀释液和溶血剂分注<span class="pump">注射泵</span></div></div>
+          <div class="role-row"><div class="key">鞘液输送</div><div class="val">流式检测中提供恒压鞘流<span class="pump">齿轮泵</span></div></div>
+          <div class="role-row"><div class="key">废液排放</div><div class="val">检测废液集中收集<span class="pump">蠕动泵</span></div></div>
+          <div class="role-row"><div class="key">管路反冲</div><div class="val">检测前后管路自动反冲清洗<span class="pump">隔膜液泵</span></div></div>
+        </div>
+      </div>
+
+      <!-- 4. 凝血分析仪 -->
+      <div class="ins-card">
+        <div class="ins-head">
+          <div class="ins-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M12 2c-3 4-5 7-5 11a5 5 0 0 0 10 0c0-4-2-7-5-11z"/></svg>
+          </div>
+          <div>
+            <h3>全自动凝血分析仪</h3>
+            <span class="en">Coagulation Analyzer</span>
+          </div>
+        </div>
+        <div class="ins-body">
+          <div class="role-row"><div class="key">样本/试剂分注</div><div class="val">血浆与凝血试剂精密配比加入反应杯<span class="pump">注射泵</span></div></div>
+          <div class="role-row"><div class="key">探针清洗</div><div class="val">防止血浆纤维蛋白对探针的污染<span class="pump">蠕动泵</span></div></div>
+          <div class="role-row"><div class="key">废液排除</div><div class="val">凝血试剂废液处理<span class="pump">隔膜液泵</span></div></div>
+          <div class="role-row"><div class="key">系统液</div><div class="val">系统稀释液稳定输送<span class="pump">齿轮泵</span></div></div>
+        </div>
+      </div>
+
+      <!-- 5. ELISA 酶免/洗板机 -->
+      <div class="ins-card">
+        <div class="ins-head">
+          <div class="ins-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+          </div>
+          <div>
+            <h3>ELISA 酶免分析仪 / 洗板机</h3>
+            <span class="en">ELISA Analyzer / Microplate Washer</span>
+          </div>
+        </div>
+        <div class="ins-body">
+          <div class="role-row"><div class="key">8/12 通道供液</div><div class="val">同时向 8 或 12 个孔注入清洗液<span class="pump">多通道蠕动泵</span></div></div>
+          <div class="role-row"><div class="key">同步抽吸</div><div class="val">配合供液同步抽走废液<span class="pump">隔膜真空泵</span></div></div>
+          <div class="role-row"><div class="key">底物分注</div><div class="val">显色底物/终止液精密分注<span class="pump">微量蠕动泵</span></div></div>
+          <div class="role-row"><div class="key">瓶切换</div><div class="val">多种清洗液瓶之间切换<span class="pump">齿轮泵+阀</span></div></div>
+        </div>
+      </div>
+
+      <!-- 6. 尿液分析仪 -->
+      <div class="ins-card">
+        <div class="ins-head">
+          <div class="ins-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M12 2 6 14a6 6 0 0 0 12 0z"/></svg>
+          </div>
+          <div>
+            <h3>全自动尿液分析仪</h3>
+            <span class="en">Urine Analyzer</span>
+          </div>
+        </div>
+        <div class="ins-body">
+          <div class="role-row"><div class="key">尿液吸取</div><div class="val">从离心杯/原杯抽取尿液样本<span class="pump">隔膜液泵</span></div></div>
+          <div class="role-row"><div class="key">流式细胞鞘液</div><div class="val">尿沉渣分析鞘液恒压输送<span class="pump">齿轮泵</span></div></div>
+          <div class="role-row"><div class="key">管路清洗</div><div class="val">每次检测后管路自动冲洗<span class="pump">蠕动泵</span></div></div>
+          <div class="role-row"><div class="key">废液排放</div><div class="val">尿液废液耐腐蚀转移<span class="pump">耐腐蚀蠕动泵</span></div></div>
+        </div>
+      </div>
+
+      <!-- 7. 分子诊断/PCR -->
+      <div class="ins-card">
+        <div class="ins-head">
+          <div class="ins-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M5 3c4 4 4 8 0 12 4 4 4 8 0 12M19 3c-4 4-4 8 0 12-4 4-4 8 0 12"/></svg>
+          </div>
+          <div>
+            <h3>分子诊断/PCR 仪</h3>
+            <span class="en">Molecular Diagnostic / PCR</span>
+          </div>
+        </div>
+        <div class="ins-body">
+          <div class="role-row"><div class="key">核酸提取液体处理</div><div class="val">磁珠法提取过程中的多步骤液体转移<span class="pump">微型注射泵</span></div></div>
+          <div class="role-row"><div class="key">微流控液滴驱动</div><div class="val">气压驱动芯片内液滴/微反应液移动<span class="pump">压电气泵</span></div></div>
+          <div class="role-row"><div class="key">试剂精密分注</div><div class="val">PCR Master Mix 精确分注至反应管<span class="pump">微量注射泵</span></div></div>
+          <div class="role-row"><div class="key">管路清洗</div><div class="val">防止 DNA 残留污染<span class="pump">隔膜液泵</span></div></div>
+        </div>
+      </div>
+
+      <!-- 8. POCT/血气 -->
+      <div class="ins-card">
+        <div class="ins-head">
+          <div class="ins-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 18h6M12 6v6"/></svg>
+          </div>
+          <div>
+            <h3>POCT / 血气分析仪</h3>
+            <span class="en">Point-of-Care / Blood Gas</span>
+          </div>
+        </div>
+        <div class="ins-body">
+          <div class="role-row"><div class="key">微量样本吸取</div><div class="val">100 µL 级全血或血浆吸取<span class="pump">微型蠕动泵</span></div></div>
+          <div class="role-row"><div class="key">校准液/质控液分注</div><div class="val">便携设备的精确液体分注<span class="pump">压电微泵</span></div></div>
+          <div class="role-row"><div class="key">气体定标</div><div class="val">血气分析的气体压力供给<span class="pump">微型隔膜气泵</span></div></div>
+          <div class="role-row"><div class="key">废液收集</div><div class="val">小型化集成式废液处理<span class="pump">微型蠕动泵</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 推荐产品矩阵 ============== -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="en">RECOMMENDED PUMPS</div>
+      <h2>面向 IVD 的 Kamoer 微型泵产品矩阵</h2>
+      <p>四大主力产品线全面覆盖 IVD 仪器的核心流体环节，支持标品快速采购与 OEM 深度定制。</p>
+    </div>
+
+    <div class="products">
+      <div class="prod-card pp1">
+        <div class="prod-img"></div>
+        <div class="prod-body">
+          <div class="series">PERISTALTIC SERIES</div>
+          <h4>蠕动泵</h4>
+          <ul>
+            <li>无介质接触·零交叉污染</li>
+            <li>分注精度达 ±0.5%</li>
+            <li>多通道、长寿命泵管可换</li>
+            <li>耐酸碱腐蚀，适配多种试剂</li>
+          </ul>
+          <span class="scene">探针清洗 / 废液 / 试剂分注</span>
+        </div>
+      </div>
+
+      <div class="prod-card pp2">
+        <div class="prod-img"></div>
+        <div class="prod-body">
+          <div class="series">DIAPHRAGM LIQUID</div>
+          <h4>隔膜液泵</h4>
+          <ul>
+            <li>自吸能力强、稳定输出</li>
+            <li>FFKM/PTFE 耐腐蚀过流件</li>
+            <li>可干运转，免维护设计</li>
+            <li>多种规格匹配不同流量段</li>
+          </ul>
+          <span class="scene">尿液吸取 / 液体输送 / 废液排放</span>
+        </div>
+      </div>
+
+      <div class="prod-card pp3">
+        <div class="prod-img"></div>
+        <div class="prod-body">
+          <div class="series">DIAPHRAGM GAS</div>
+          <h4>隔膜气泵</h4>
+          <ul>
+            <li>真空 -80 kPa / 正压 200 kPa</li>
+            <li>无油设计、洁净气源</li>
+            <li>低噪音 < 50 dB</li>
+            <li>BLDC 长寿命驱动</li>
+          </ul>
+          <span class="scene">真空抽吸 / 液面探测 / 气路驱动</span>
+        </div>
+      </div>
+
+      <div class="prod-card pp4">
+        <div class="prod-img"></div>
+        <div class="prod-body">
+          <div class="series">OEM CUSTOMIZED</div>
+          <h4>OEM 定制泵组</h4>
+          <ul>
+            <li>多通道集成模组</li>
+            <li>注射/分注泵定制开发</li>
+            <li>压电微泵小型化方案</li>
+            <li>整机液路系统集成支持</li>
+          </ul>
+          <span class="scene">化学发光 / POCT / 分子诊断</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 参数对比表 ============== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="en">SPECIFICATION COMPARISON</div>
+      <h2>核心产品参数对比</h2>
+      <p>根据您的应用场景、流量范围、精度要求快速选型。下表为典型规格示例，更多型号请咨询工程师。</p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="spec">
+        <thead>
+          <tr>
+            <th>泵类型 / 系列</th>
+            <th>流量范围</th>
+            <th>精度（CV）</th>
+            <th>压力 / 真空</th>
+            <th>典型寿命</th>
+            <th>推荐场景</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pname">微量蠕动泵</td>
+            <td>0.1 µL/min – 50 mL/min</td>
+            <td>≤ ±1%</td>
+            <td>≤ 0.3 MPa</td>
+            <td>5000 h+</td>
+            <td>探针清洗、试剂分注、废液</td>
+          </tr>
+          <tr>
+            <td class="pname">高精度蠕动泵</td>
+            <td>10 µL/min – 1 L/min</td>
+            <td>≤ ±0.5%</td>
+            <td>≤ 0.4 MPa</td>
+            <td>8000 h+</td>
+            <td>多通道洗板、CLIA B/F 分离</td>
+          </tr>
+          <tr>
+            <td class="pname">隔膜液泵</td>
+            <td>50 mL/min – 6 L/min</td>
+            <td>≤ ±2%</td>
+            <td>自吸 ≤ 5m / 出 ≤ 0.6 MPa</td>
+            <td>5000 h+</td>
+            <td>尿液吸取、系统液输送、废液</td>
+          </tr>
+          <tr>
+            <td class="pname">隔膜气泵</td>
+            <td>0.5 – 30 L/min（气）</td>
+            <td>—</td>
+            <td>真空 -80 kPa / 正压 200 kPa</td>
+            <td>10000 h+</td>
+            <td>真空抽吸、气路驱动、液面探测</td>
+          </tr>
+          <tr>
+            <td class="pname">微量注射泵</td>
+            <td>0.5 µL – 5000 µL（行程）</td>
+            <td>≤ ±0.3%</td>
+            <td>—</td>
+            <td>百万次循环</td>
+            <td>CLIA 底物分注、PCR Master Mix</td>
+          </tr>
+          <tr>
+            <td class="pname">压电微泵</td>
+            <td>0.1 – 25 mL/min</td>
+            <td>≤ ±1%</td>
+            <td>正压/负压可双向</td>
+            <td>5000 h+</td>
+            <td>POCT 微流控、便携设备</td>
+          </tr>
+          <tr>
+            <td class="pname">齿轮泵</td>
+            <td>5 mL/min – 5 L/min</td>
+            <td>≤ ±1%</td>
+            <td>≤ 1 MPa</td>
+            <td>10000 h+</td>
+            <td>鞘液恒压、大体积液体输送</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 选型流程 ============== -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="en">SELECTION PROCESS</div>
+      <h2>5 步完成 IVD 微型泵选型</h2>
+      <p>从需求确认到样品验证，Kamoer 工程团队全程支持，最快 7 个工作日内提供样品方案。</p>
+    </div>
+
+    <div class="selection">
+      <div class="sel-step">
+        <div class="sel-num">01</div>
+        <h4>需求确认</h4>
+        <p>仪器类型、应用环节、目标精度与寿命</p>
+      </div>
+      <div class="sel-step">
+        <div class="sel-num">02</div>
+        <h4>介质评估</h4>
+        <p>试剂酸碱性、有机溶剂、生物兼容性</p>
+      </div>
+      <div class="sel-step">
+        <div class="sel-num">03</div>
+        <h4>参数匹配</h4>
+        <p>流量、压力、脉动、噪音指标推荐型号</p>
+      </div>
+      <div class="sel-step">
+        <div class="sel-num">04</div>
+        <h4>样品验证</h4>
+        <p>提供样机协助现场验证与数据采集</p>
+      </div>
+      <div class="sel-step">
+        <div class="sel-num">05</div>
+        <h4>批量交付</h4>
+        <p>批次稳定供货、技术文档与寿命数据支持</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 服务能力 ============== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="en">VALUE-ADDED SERVICES</div>
+      <h2>面向 IVD 客户的全周期服务</h2>
+      <p>不只是卖泵，更提供从选型设计到量产验证、整机液路整合的一站式工程支持。</p>
+    </div>
+
+    <div class="services">
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 18 9 5 9-5"/></svg>
+        </div>
+        <h4>OEM/ODM 定制</h4>
+        <p>泵头材质、电机、流量曲线、接口外形按需定制，1 台起订</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v6M5 9l4 4M19 9l-4 4M3 18h18M6 22h12"/></svg>
+        </div>
+        <h4>液路系统集成</h4>
+        <p>泵+阀+管路+控制器的子系统模块化交付，缩短整机研发周期</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h4>合规文档支持</h4>
+        <p>提供 ISO 13485、生物相容性、寿命验证、DV/PV 等技术资料</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h4>快速响应</h4>
+        <p>样品最快 24h 发出，工程问题 4h 响应、48h 现场支持</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 认证 ============== -->
+<section class="certs-section">
+  <div class="container">
+    <div class="row">
+      <span class="cbadge">ISO 9001</span>
+      <span class="cbadge">ISO 13485</span>
+      <span class="cbadge">ISO 14001</span>
+      <span class="cbadge">CE</span>
+      <span class="cbadge">RoHS</span>
+      <span class="cbadge">REACH</span>
+      <span class="cbadge">UL</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA ============== -->
+<section class="cta">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>开始您的 IVD 流体方案</h2>
+      <p>告诉我们您的仪器类型、检测项目、流量精度与寿命要求，Kamoer 工程团队为您配置专属微型泵方案与样品试用。</p>
+    </div>
+    <div class="cta-action">
+      <a href="#" class="btn">联系 IVD 工程师 <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Footer ============== -->
+<footer class="footer">
+  <div class="footer-line"></div>
+  <div class="container footer-top">
+    <div class="footer-grid">
+      <div class="foot-brand">
+        <div class="big-logo">Kamoer</div>
+        <div class="corp">Kamoer Fluid Tech (Shanghai) Co., Ltd.</div>
+        <div class="desc">专注微型泵、精密流体控制与可靠流体传输技术，服务全球客户超 100 个国家和地区。</div>
+        <div class="phone-label">销售咨询</div>
+        <div class="phone">133 1180 1915</div>
+      </div>
+      <div class="foot-col">
+        <h5>解决方案</h5>
+        <ul>
+          <li><a href="#">IVD 体外诊断</a></li>
+          <li><a href="#">生命科学</a></li>
+          <li><a href="#">医疗设备</a></li>
+          <li><a href="#">实验室仪器</a></li>
+          <li><a href="#">工业自动化</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>产品</h5>
+        <ul>
+          <li><a href="#">蠕动泵</a></li>
+          <li><a href="#">隔膜液泵</a></li>
+          <li><a href="#">隔膜气泵</a></li>
+          <li><a href="#">注射/分注泵</a></li>
+          <li><a href="#">配件</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>支持</h5>
+        <ul>
+          <li><a href="#">资料下载</a></li>
+          <li><a href="#">选型支持</a></li>
+          <li><a href="#">技术服务</a></li>
+          <li><a href="#">常见问题</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <div>© 2026 Kamoer Fluid Tech (Shanghai) Co., Ltd. All Rights Reserved.</div>
+    <div><a href="#">沪ICP备XXXXXXXX号</a> · <a href="#">隐私政策</a> · <a href="#">网站地图</a></div>
+  </div>
+</footer>
+
+<script>
+  /* ============== 导航栏滚动 ============== */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  /* ============== 移动端菜单 ============== */
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  menuToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+  navMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navMenu.classList.remove('open'));
+  });
+
+  /* ============== 模块淡入 ============== */
+  const fadeEls = document.querySelectorAll('.section-head, .fn-card, .ins-card, .prod-card, .sel-step, .svc-card, .overview-grid, .table-wrap');
+  fadeEls.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .6s var(--easing), transform .6s var(--easing)';
+  });
+  const fadeObs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        const delay = (i % 5) * 60;
+        setTimeout(() => {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }, delay);
+        fadeObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => fadeObs.observe(el));
+</script>
+</body>
+</html>
